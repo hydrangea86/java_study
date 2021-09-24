@@ -15,7 +15,7 @@ public class DataType {
         double d2 = 1.234567891234;
         System.out.println("f2 = " + f2);
         
-        //문자 타입 (char에서는 한글자만)
+        //문자 타입 (char에서는 한글자만 홑따옴표만)
         char c1 = 'A';
         char c2 =  97;
         System.out.println("c2 = " + c2);

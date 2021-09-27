@@ -18,5 +18,7 @@ public class RandomExample {
             #공식: x이상 y이하의 랜덤 정수
             (int) (Math.random() * (y - x + 1)) + x
          */
+        int ri = (int) (Math.random() * 10) + 1;
+        System.out.println("ri = " + ri);
     }
 }

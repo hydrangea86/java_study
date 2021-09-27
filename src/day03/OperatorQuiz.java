@@ -18,11 +18,9 @@ public class OperatorQuiz {
                 correctInput = rn1 + rn2;
             } else if (rn3 == 1) {
                 operator = "-";
+                correctInput = rn1 - rn2;
                 if(rn1 < rn2) {
-                    System.out.printf("%d %s %d = ? \n", rn2, operator, rn1);
-                    correctInput = rn2 - rn1;
-                } else {
-                    correctInput = rn1 - rn2;
+                    continue;
                 }
             } else {
                 operator = "x";
@@ -31,12 +29,12 @@ public class OperatorQuiz {
             System.out.printf("%d %s %d = ? \n", rn1, operator, rn2);
             int userInput = sc.nextInt();
             if (userInput == correctInput) {
-                System.out.println("정답입니다");
+                System.out.println("정답!");
                 correctAnswer++;
             } else if (userInput == 0) {
                 break;
             } else {
-                System.out.println("틀렸습니다");
+                System.out.println("틀림!");
                 wrongAnswer++;
             }
         }

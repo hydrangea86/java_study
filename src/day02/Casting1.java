@@ -30,5 +30,6 @@ public class Casting1 {
         System.out.println("o = " + o);
 
         short p = (byte) o;
+        System.out.println("p = " + p);
     }
 }

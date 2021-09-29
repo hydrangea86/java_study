@@ -90,8 +90,7 @@ public class OperatorQuizAnswer {
                     break;
             }
 
-            System.out.printf("\nQ%d) %d %s %d = ?\n",
-                    qNum++, first, mark, second);
+            System.out.printf("\nQ%d) %d %s %d = ?\n", qNum++, first, mark, second);
 
             //사용자의 입력답
             System.out.print(">> ");

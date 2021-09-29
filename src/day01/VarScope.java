@@ -13,5 +13,5 @@ public class VarScope {
         int num3 = 100;
         int num4 = num3 * num1;
     } //end main
-    //num5 = num1;
+    //int num5 = num1;
 } //end class

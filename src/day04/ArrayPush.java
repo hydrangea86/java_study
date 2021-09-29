@@ -29,6 +29,7 @@ public class ArrayPush {
         // 빈배열 만들기
         //String[] sArr = {};
         String[] sArr = new String[0];
+        System.out.println("sArr= " + Arrays.toString(sArr));
 
     }
 }

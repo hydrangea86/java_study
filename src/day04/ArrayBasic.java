@@ -32,7 +32,7 @@ public class ArrayBasic {
         }
         System.out.println("\n============================================");
         for (int n : arr) {
-            System.out.println(n + " ");
+            System.out.print(n + " ");
         }
 
         // 값 목록으로 배열 생성하기
@@ -40,9 +40,11 @@ public class ArrayBasic {
         // new int[] 생량 첫 배열변수 선언시 이외에는 불가능
         // int[] iArr = new int[] {10, 20, 30};
         int[] iArr = {10, 20, 30};
+        System.out.println("iArr= " + Arrays.toString(iArr));
 
         // 베열 값 변경 시 new int[] 붙여야 함
         iArr = new int[] {100, 200, 300};
+        System.out.println("iArr= " + Arrays.toString(iArr));
 
         String[] foods = {"사과", "딸기", "복숭아", "파인애플"};
         System.out.println("\nfoods.length = " + foods.length);

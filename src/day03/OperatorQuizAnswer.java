@@ -16,6 +16,8 @@ public class OperatorQuizAnswer {
 
         int max = 0;
 
+        // while안에 switch 쓸 경우는 논리 값을 이용해 while문 break 설정
+
         boolean flag = false;
         while (!flag) {
             System.out.println("\n# 난이도를 입력하세요! [상, 중, 하]");

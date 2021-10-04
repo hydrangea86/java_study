@@ -15,8 +15,9 @@ public class ArrayPop {
         for (int i = 0; i < arr.length - 1; i++) {
             temp[i] = arr[i];
         }
+        System.out.println("temp:" + Arrays.toString(temp));
         arr = temp; temp = null;
         System.out.println("arr:" + Arrays.toString(arr));
-        System.out.println("temp:" + Arrays.toString(temp));
+
     }
 }

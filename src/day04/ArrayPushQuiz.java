@@ -30,7 +30,7 @@ public class ArrayPushQuiz {
 
             //3. 기존에 저장된 음식들을 모두 신규배열로 복사
             for (int i = 0; i < foodList.length; i++) {
-                temp[i] =foodList[i];
+                temp[i] = foodList[i];
             }
 
             //4. 신규데이터를 마지막에 인덱스에 추가

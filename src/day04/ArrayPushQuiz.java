@@ -17,6 +17,7 @@ public class ArrayPushQuiz {
 
         Scanner sc = new Scanner(System.in);
         String[] foodList = {};
+        System.out.println("foodList.length = " + foodList.length);
         while (true) {
             // 음식을 한번 입력받을 때 해야 할 일
             // 1. 일단 음식명을 입력받아야 함. -> 스캐너가 필요함

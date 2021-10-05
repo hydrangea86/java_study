@@ -1,14 +1,16 @@
 package day07;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Scanner;
 
-public class TeamProjectStudentManager1 {
+public class teamProjectStudentManager2 {
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
 
         int managerNum = 0; // 정보출력을 위한 초기화
-        String name[] = {};
+        String name[] = {}; // for문 사용시 name.length 를 기준으로 사용
         String major[] = {};
         String phone[] = {};
         String sNumber[] = {};
@@ -24,13 +26,14 @@ public class TeamProjectStudentManager1 {
             System.out.println("\n<<<<<<<<<<<<<< 메뉴 >>>>>>>>>>>>>>>>");
             System.out.println("1. 정보 입력");
             System.out.println("2. 정보 출력");
-            System.out.println("3. 종료");
+            System.out.println("3. 정보 수정");
+            System.out.println("4. 종료");
             System.out.print("선택>> ");
             select = sc.nextInt();
             sc.nextLine(); // enter skip
 
             //먼저 처리할 메뉴: 종료
-            if (select == 3) {
+            if (select == 4) {
                 System.out.println("종료합니다.");
                 break;
             }
@@ -46,7 +49,7 @@ public class TeamProjectStudentManager1 {
                         String SPhone = sc.nextLine();
                         System.out.print("학번: ");
                         String SNumber = sc.nextLine();
-                        System.out.print("평균: ");
+                        System.out.print("학점: ");
                         //avg[i] = sc.nextFloat();
                         String fStr = sc.nextLine();
                         float SAvg = Float.parseFloat(fStr);
@@ -62,19 +65,19 @@ public class TeamProjectStudentManager1 {
                             tempSNumber[i] = sNumber[i];
                             tempAvg[i] = avg[i];
                         }
-                        tempName[tempName.length -1] = SName;
+                        tempName[tempName.length - 1] = SName;
                         name = tempName;
                         tempName = null;
 
-                        tempMajor[tempMajor.length -1] = SMajor;
+                        tempMajor[tempMajor.length - 1] = SMajor;
                         major = tempMajor;
-                        tempMajor= null;
+                        tempMajor = null;
 
-                        tempPhone[tempPhone.length -1] = SPhone;
+                        tempPhone[tempPhone.length - 1] = SPhone;
                         phone = tempPhone;
                         tempPhone = null;
 
-                        tempSNumber[tempSNumber.length -1] = SNumber;
+                        tempSNumber[tempSNumber.length - 1] = SNumber;
                         sNumber = tempSNumber;
                         tempSNumber = null;
 
@@ -84,15 +87,15 @@ public class TeamProjectStudentManager1 {
 
                         System.out.println("계속 등록하시겠습니까? (y / n)");
                         String answer = sc.nextLine();
-                        if(answer.equals("y")) {
+                        if (answer.equals("y")) {
                             continue;
                         } else {
+                            System.out.println("등록 완료!");
                             break;
                         }
                     }
                     break;
                 case 2: //출력 메뉴
-                    System.out.println();
                     System.out.println("------------ 정보 출력 ------------");
                     for (int i = 0; i < name.length; i++) {
                         //sc.nextLine(); //enter skip 해줌
@@ -101,13 +104,44 @@ public class TeamProjectStudentManager1 {
                         System.out.print(" [학과]: " + major[i] + ",");
                         System.out.print(" [연락처]: " + phone[i] + ",");
                         System.out.print(" [학번]: " + sNumber[i] + ",");
-                        System.out.print(" [평균]: " + avg[i] + "\n");
+                        System.out.print(" [학점]: " + avg[i] + "\n");
                     }
                     break;
-                default: //잘못된 메뉴 입력
-                    System.out.println("잘못 누르셨습니다.");
+                case 3: //정보 수정
+                    System.out.println("------------ 정보 수정 ------------");
+                    while (true) {
+                        System.out.print("수정할 학생 이름: ");
+                        String targetName = sc.nextLine();
+
+                        int index = -1;
+                        for (int i = 0; i < name.length; i++) {
+                            if (targetName.equals(name[i])) ;
+                            index = i;
+                            System.out.println("index: " + index);
+                            break;
+                        }
+                        System.out.print("수정할 학과: ");
+                        major[index] = sc.nextLine();
+                        System.out.print("수정할 연락처: ");
+                        phone[index] = sc.nextLine();
+                        System.out.print("수정할 학번: ");
+                        sNumber[index] = sc.nextLine();
+                        System.out.print("수정할 학점: ");
+                        avg[index] = sc.nextFloat();
+                        System.out.println("계속 수정하시겠습니까? (y / n)");
+                        String answer = sc.nextLine();
+                        if (answer.equals("y")) {
+                            continue;
+                        } else {
+                            break;
+                        }
+                    }
+
                     break;
-            }
+            default: //잘못된 메뉴 입력
+                System.out.println("잘못 누르셨습니다.");
+                break;
         }
-    }//main method
+    }
+}//main method
 }//class

@@ -6,7 +6,7 @@ public class TeamProjectStudentManager1 {
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        int max = 1;
+        int max = 10;
         String name[] = new String[max];
         String major[] = new String[max];
         String phone[] = new String[max];
@@ -34,9 +34,10 @@ public class TeamProjectStudentManager1 {
             }
             switch (select) {
                 case 1: //입력 메뉴 서브타이틀 출력
-                    System.out.println("학생 등록");
-                    for (int i = 0; i < max; i++) {
+                    int studentNum = 0;
+                    for (int i = studentNum; i < max; i++) {
                         System.out.println("------------");
+                        System.out.println("학생 등록");
                         sc.nextLine(); // enter skip
                         System.out.print("이름: ");
                         name[i] = sc.nextLine();
@@ -50,6 +51,14 @@ public class TeamProjectStudentManager1 {
                         //avg[i] = sc.nextFloat();
                         String fStr = sc.nextLine();
                         avg[i] = Float.parseFloat(fStr);
+                        System.out.println("계속 등록하시겠습니까? (y / n)");
+                        String answer = sc.nextLine();
+                        if(answer.equals("y")) {
+                            studentNum++;
+                            continue;
+                        } else {
+                            break;
+                        }
                     }
                     break;
                 case 2: //출력 메뉴

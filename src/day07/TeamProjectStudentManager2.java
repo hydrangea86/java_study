@@ -52,6 +52,7 @@ public class TeamProjectStudentManager2 {
                         //avg[i] = sc.nextFloat();
                         String fStr = sc.nextLine();
                         avg[i] = Float.parseFloat(fStr);
+
                     }
                     break;
                 case 2: //출력 메뉴
@@ -101,8 +102,4 @@ public class TeamProjectStudentManager2 {
             }
         }
     }//main method
-
-    private static int printMenu() {
-        return 0;
-    }
 }//class

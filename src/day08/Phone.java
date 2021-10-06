@@ -19,24 +19,23 @@ public class Phone {
     //부품 속성(포함 관계: composition)
     Battery ionBattery;
 
-
     //기능: 객체의 행위
     //method: static붙이지 말 것
 
     //전원을 켜는 기능
-    void powerOn() {
+    public void powerOn() {
         on = true;
         System.out.println(model + "의 전원을 켭니다.");
     }
 
     //전원을 끄는 기능
-    void powerOff() {
+    public void powerOff() {
         on = false;
         System.out.println(model + "의 전원을 끕니다.");
     }
 
     //핸드폰 정보를 보여주는 기능
-    void showSpec() {
+    public void showSpec() {
         if (!on) {
             System.out.println("전원을 먼저 켜세요");
             return;
@@ -48,7 +47,7 @@ public class Phone {
     }
 
     //문자메시지를 보내는 기능
-    boolean sendMessage(Phone targetPhone, String message) {
+    public boolean sendMessage(Phone targetPhone, String message) {
         //상대방 메시함이 가득차지 않았다면
         //상대방 문자메시함의 총 저장 수 > 상대방 현재 메시지수
         if (targetPhone.receiveMessages.length > targetPhone.messageCount) { //상대방 메시함이 가득차지 않았다면
@@ -62,7 +61,12 @@ public class Phone {
     }
 
     //수신 메시함을 확인하는 기능
-    void checkMessages() {
+    public void checkMessages() {
+        if (!on) {
+            System.out.println("전원을 먼저 켜세요.");
+            return;
+        }
+
         System.out.printf("\n================= [%s]의 메시함 ================\n", model);
         for (int i = 0; i < messageCount; i++) {
             System.out.printf("# %d. %s\n", i + 1);
@@ -70,22 +74,22 @@ public class Phone {
     }
 
     //생성자(무조건 void이기 때문에 void를 안붙임)
-    Phone() {
+    public Phone() {
         System.out.println("핸드폰 1번 생성자 호출!");
         model = "애니콜";
-        color= "쥐색";
+        color = "쥐색";
         price = 300000;
     }
 
     //생성자는 여러 개 선언할 수 있음(오버로딩)
-    Phone(String modelName) { //변수:메서드 데이터
+    public Phone(String modelName) { //변수:메서드 데이터
         System.out.println("핸드폰 2번 생정자 호출!");
         model = modelName; //필드
         color = "스노우 화이트";
         price = 1000000;
     }
 
-    Phone(String modelName, String colorName) { //변수:메서드 데이터
+    public Phone(String modelName, String colorName) { //변수:메서드 데이터
         System.out.println("핸드폰 3번 생정자 호출!");
         model = modelName; //필드
         color = colorName;

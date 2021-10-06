@@ -14,7 +14,7 @@ public class teamProjectStudentManager2 {
         String major[] = {};
         String phone[] = {};
         String sNumber[] = {};
-        float avg[] = {};
+        double avg[] = {};
 
         int select = 0; //메뉴 입력값 저장 변수
 
@@ -27,13 +27,15 @@ public class teamProjectStudentManager2 {
             System.out.println("1. 정보 입력");
             System.out.println("2. 정보 출력");
             System.out.println("3. 정보 수정");
-            System.out.println("4. 종료");
+            System.out.println("4. 정보 삭제");
+            System.out.println("5. 종료");
             System.out.print("선택>> ");
             select = sc.nextInt();
             sc.nextLine(); // enter skip
 
             //먼저 처리할 메뉴: 종료
-            if (select == 4) {
+            if (select == 5) {
+
                 System.out.println("종료합니다.");
                 break;
             }
@@ -52,12 +54,12 @@ public class teamProjectStudentManager2 {
                         System.out.print("학점: ");
                         //avg[i] = sc.nextFloat();
                         String fStr = sc.nextLine();
-                        float SAvg = Float.parseFloat(fStr);
+                        double SAvg = Double.parseDouble(fStr);
                         String[] tempName = new String[name.length + 1];
                         String[] tempMajor = new String[major.length + 1];
                         String[] tempPhone = new String[phone.length + 1];
                         String[] tempSNumber = new String[sNumber.length + 1];
-                        float[] tempAvg = new float[avg.length + 1];
+                        double[] tempAvg = new double[avg.length + 1];
                         for (int i = 0; i < name.length; i++) {
                             tempName[i] = name[i];
                             tempMajor[i] = major[i];
@@ -115,10 +117,11 @@ public class teamProjectStudentManager2 {
 
                         int index = -1;
                         for (int i = 0; i < name.length; i++) {
-                            if (targetName.equals(name[i])) ;
-                            index = i;
-                            System.out.println("index: " + index);
-                            break;
+                            if (targetName.equals(name[i])) {
+                                index = i;
+                                //System.out.println("index: " + index);
+                                break;
+                            }
                         }
                         System.out.print("수정할 학과: ");
                         major[index] = sc.nextLine();
@@ -128,6 +131,7 @@ public class teamProjectStudentManager2 {
                         sNumber[index] = sc.nextLine();
                         System.out.print("수정할 학점: ");
                         avg[index] = sc.nextFloat();
+
                         System.out.println("계속 수정하시겠습니까? (y / n)");
                         String answer = sc.nextLine();
                         if (answer.equals("y")) {
@@ -136,12 +140,65 @@ public class teamProjectStudentManager2 {
                             break;
                         }
                     }
-
                     break;
-            default: //잘못된 메뉴 입력
-                System.out.println("잘못 누르셨습니다.");
-                break;
+                case 4: //정보 삭세
+                    while (true) {
+                        System.out.println("- 삭제할 학생의 이름을 입력하세요! ");
+                        System.out.print(">? ");
+                        String deleteTarget = sc.next();
+
+                        //탐색
+                        int index = -1;
+                        for (int i = 0; i < name.length; i++) {
+                            if (deleteTarget.equals(name[i])) {
+                                index = i;
+                                break;
+                            }
+                        }
+                        //찾았는지 확인 후 삭제 진행
+                        if (index != -1) {
+                            System.out.println(name[index] + "의 학생 정보를 삭제합니다.");
+
+                            //삭제 알고리즘
+                            for (int i = index; i < name.length - 1; i++) {
+                                name[i] = name[i + 1];
+                            }
+                            String[] deleteName = new String[name.length - 1];
+                            String[] deleteMajor = new String[major.length - 1];
+                            String[] deletePhone = new String[phone.length - 1];
+                            String[] deleteSNumber = new String[sNumber.length - 1];
+                            double[] deleteAvg = new double[avg.length - 1];
+
+                            for (int i = 0; i < name.length - 1; i++) {
+                                deleteName[i] = name[i];
+                                deleteMajor[i] = major[i];
+                                deletePhone[i] = phone[i];
+                                deleteSNumber[i] = sNumber[i];
+                                deleteAvg[i] = avg[i];
+                            }
+                            name = deleteName;
+                            deleteName = null;
+                            major = deleteMajor;
+                            deleteMajor = null;
+                            phone = deletePhone;
+                            deletePhone = null;
+                            sNumber = deleteSNumber;
+                            deleteMajor = null;
+                            avg = deleteAvg;
+                            deleteAvg = null;
+
+                            System.out.println("삭제완료");
+                            sc.close();
+                            break;
+                        } else {
+                            System.out.printf("해당 (%s) 학생은 존재하지 않습니다.\n", deleteTarget);
+                        }
+                    }
+                    break;
+                default: //잘못된 메뉴 입력
+                    System.out.println("잘못 누르셨습니다.");
+                    break;
+            }
         }
-    }
-}//main method
+    }//main method
 }//class

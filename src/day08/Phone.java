@@ -14,6 +14,7 @@ public class Phone {
     //상태 속성
     int messageCount; //문자메시지 수
     boolean on; //전원이 켜진 여부
+    String[] receiveMessages = new String[3]; //문자메시지함
 
     //부품 속성(포함 관계: composition)
     Battery ionBattery;
@@ -44,6 +45,28 @@ public class Phone {
         System.out.println("* 모델명: " + model);
         System.out.println("* 색상: " + color);
         System.out.println("* 가격: " + price + "원");
+    }
+
+    //문자메시지를 보내는 기능
+    boolean sendMessage(Phone targetPhone, String message) {
+        //상대방 메시함이 가득차지 않았다면
+        //상대방 문자메시함의 총 저장 수 > 상대방 현재 메시지수
+        if (targetPhone.receiveMessages.length > targetPhone.messageCount) { //상대방 메시함이 가득차지 않았다면
+            //내가 보낼 메시지를 상대방 핸드폰의 문자메시함에 저장
+            targetPhone.receiveMessages[targetPhone.messageCount++] = message;
+            return true;
+        } else {
+            System.out.println("상대방의 메시함이 가득 찼습니다.");
+            return false;
+        }
+    }
+
+    //수신 메시함을 확인하는 기능
+    void checkMessages() {
+        System.out.printf("\n================= [%s]의 메시함 ================\n", model);
+        for (int i = 0; i < messageCount; i++) {
+            System.out.printf("# %d. %s\n", i + 1);
+        }
     }
 
     //생성자(무조건 void이기 때문에 void를 안붙임)

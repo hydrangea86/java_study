@@ -111,7 +111,7 @@ public class teamProjectStudentManager2 {
                     System.out.println("------------ 정보 수정 ------------");
                     while (true) {
                         System.out.print("수정할 학생 이름: ");
-                        String targetName = sc.nextLine();
+                        String targetName = sc.next();
 
                         int index = -1;
                         for (int i = 0; i < name.length; i++) {

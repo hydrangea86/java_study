@@ -53,7 +53,7 @@ public class TeamProjectStudentManager {
                         String SPhone = sc.nextLine();
                         System.out.print("학번: ");
                         String SNumber = sc.nextLine();
-                        System.out.print("평균: ");
+                        System.out.print("학점: ");
                         //avg[i] = sc.nextFloat();
                         String fStr = sc.nextLine();
                         double SAvg = Double.parseDouble(fStr);
@@ -90,7 +90,7 @@ public class TeamProjectStudentManager {
                         tempAvg = null;
 
                         System.out.println("계속 등록을 원하시면 [y]를 입력하세요.");
-                        System.out.println("등록을 종료 하시려면 아무키나 입력하세요.");
+                        System.out.println("등록을 종료 하시려면 [y]를 제외한 아무키나 입력하세요.");
                         System.out.print(">> ");
                         String answer = sc.nextLine();
                         if (answer.equals("y")) {
@@ -111,7 +111,7 @@ public class TeamProjectStudentManager {
                         System.out.print(" [학과]: " + major[i] + ",");
                         System.out.print(" [연락처]: " + phone[i] + ",");
                         System.out.print(" [학번]: " + sNumber[i] + ",");
-                        System.out.print(" [평균]: " + avg[i] + "\n");
+                        System.out.print(" [학점]: " + avg[i] + "\n");
                     }
                     break;
                 case 3: //정보 수정
@@ -153,9 +153,10 @@ public class TeamProjectStudentManager {
                     System.out.println("현재 등록된 학생 목록: " + Arrays.toString(name));
 
                     while (true) {
-                        System.out.println("삭제할 학생을 입력하세요.");
+                        System.out.println("삭제할 학생 이름을 입력하세요.");
                         System.out.print(">> ");
-                        String targetName = sc.nextLine();
+                        String targetName = sc.next();
+
                         //탐색
                         int index = -1;
                         for (int i = 0; i < name.length; i++) {
@@ -166,10 +167,10 @@ public class TeamProjectStudentManager {
                         }
                         //탐색 확인 후 삭제
                         if(index != -1) {
-                            System.out.println(name[index] + " 학생 정보를 삭제합니다.");
+                            System.out.println("[" + name[index] + "]" + " 학생 정보를 삭제합니다.");
 
                             //삭제 알고리즘
-                            for (int i = 0; i < name.length - 1; i++) {
+                            for (int i = index; i < name.length - 1; i++) {
                                 name[i] = name[i + 1];
                                 major[i] = major[i + 1];
                                 phone[i] = phone[i + 1];
@@ -197,7 +198,7 @@ public class TeamProjectStudentManager {
                             System.out.println("삭제 후 현재 등록된 학생 이름: " + Arrays.toString(name));
                             break;
                         } else {
-                            System.out.printf("해당 학생 (%s)은 존재하지 않습니다.\n", targetName);
+                            System.out.printf("(%s)학생은 존재하지 않습니다. 다시 입력하세요.\n", targetName);
                         }
                     }
                     break;

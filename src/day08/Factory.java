@@ -1,6 +1,6 @@
 package day08;
 
-//실행용 클래스
+//실행용 클래스(main)
 public class Factory {
 
     public static void main(String[] args) {

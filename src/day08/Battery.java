@@ -1,5 +1,6 @@
 package day08;
 
+//설계도
 public class Battery {
 
     String company;

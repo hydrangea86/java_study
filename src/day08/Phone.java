@@ -69,7 +69,7 @@ public class Phone {
 
         System.out.printf("\n================= [%s]의 메시함 ================\n", model);
         for (int i = 0; i < messageCount; i++) {
-            System.out.printf("# %d. %s\n", i + 1);
+            System.out.printf("# %d. %s\n", i + 1, receiveMessages[i]);
         }
     }
 

@@ -26,11 +26,13 @@ public class Factory {
         s21.powerOn();
         s21.showSpec();
 
+        //배터리 삽입(ionBattery)
         s21.ionBattery = new Battery("로켓");
 
         System.out.println("s21의 배터리 회사명: " + s21.ionBattery.company);
 
         //아이폰x의 베터리를 충전
+        iPhoneX.ionBattery = new Battery("zzz");//먼저 베터리 삽입
         iPhoneX.ionBattery.charge();
 
     }

@@ -8,10 +8,12 @@ public class Battery {
     int amount; //용량
 
     Battery(String companyName) {
+
         company = companyName;
     }
 
     void charge() {
+
         System.out.println("배터리를 충전합니다.");
     }
 }

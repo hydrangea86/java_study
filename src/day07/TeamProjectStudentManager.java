@@ -11,7 +11,6 @@ public class TeamProjectStudentManager {
 
     public static void main(String[] args) {
 
-        int managerNum = 0; // 정보출력을 위한 초기화
         String name[] = {};
         String major[] = {};
         String phone[] = {};

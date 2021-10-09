@@ -1,8 +1,5 @@
-package day07;
+package Project3;
 
-import com.sun.org.apache.xpath.internal.objects.XString;
-
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Scanner;
 

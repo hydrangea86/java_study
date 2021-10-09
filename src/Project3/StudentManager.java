@@ -1,4 +1,4 @@
-package day07;
+package Project3;
 
 import java.util.Scanner;
 
@@ -63,7 +63,7 @@ public class StudentManager {
                 System.out.println("연락처: " + ph[i]);
                 System.out.println("----------------------");
                 break;
-            } else if(i == (id.length-1)){
+            } else {
                 System.out.println("[일치하는 학번이 없습니다.]");
             }
         }
@@ -80,12 +80,11 @@ public class StudentManager {
                 ph[i] = sc.next();
                 System.out.println("----------------------");
                 break;
-            } else if(i == (id.length - 1)){
+            } else {
                 System.out.println("[일치하는 학번이 없습니다.]");
             }
         }
     }
-
     public static void end(Scanner sc) {
         System.exit(0);
         sc.close();

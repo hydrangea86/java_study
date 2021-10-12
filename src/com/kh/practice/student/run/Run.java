@@ -8,6 +8,6 @@ public class Run {
     public static void main(String[] args) {
         StudentController ss = new StudentController();
 
-        System.out.println(ss.sArr[3].infrom());
+        System.out.println(ss.sArr[3].inform());
     }
 }

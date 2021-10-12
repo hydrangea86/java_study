@@ -1,7 +1,6 @@
 package com.kh.practice.student.controller;
 
 import com.kh.practice.student.model.vo.Student;
-import org.omg.CORBA.PUBLIC_MEMBER;
 
 public class StudentController {
 

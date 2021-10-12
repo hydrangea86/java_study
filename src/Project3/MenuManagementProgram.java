@@ -19,8 +19,6 @@ public class MenuManagementProgram {
         }
     }
 
-    ;
-
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -83,9 +81,9 @@ public class MenuManagementProgram {
                 temp[menuList.length][2] = newMainIgd;
 
                 System.out.print("- 추천소스 : ");
-                String newSause = sc.nextLine();
+                String newSauce = sc.nextLine();
 //                sc.nextLine();
-                temp[menuList.length][3] = newSause;
+                temp[menuList.length][3] = newSauce;
 
                 System.out.print("- 판매가격 : ");
                 int newPrice = sc.nextInt();

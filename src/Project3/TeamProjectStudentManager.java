@@ -98,7 +98,6 @@ public class TeamProjectStudentManager {
                     }
                     break;
                 case 2: //출력 메뉴
-                    System.out.println();
                     System.out.println("---------------------- 정보 출력 ----------------------");
                     for (int i = 0; i < name.length; i++) {
                         //sc.nextLine(); //enter skip 해줌

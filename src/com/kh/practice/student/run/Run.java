@@ -1,0 +1,13 @@
+package com.kh.practice.student.run;
+
+import com.kh.practice.student.controller.StudentController;
+import com.kh.practice.student.model.vo.Student;
+
+public class Run {
+
+    public static void main(String[] args) {
+        StudentController ss = new StudentController();
+
+        System.out.println(ss.sArr[3].infrom());
+    }
+}

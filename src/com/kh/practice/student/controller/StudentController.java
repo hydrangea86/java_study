@@ -4,7 +4,7 @@ import com.kh.practice.student.model.vo.Student;
 
 public class StudentController {
 
-    public Student[] sArr = new Student[5];
+    private Student[] sArr = new Student[5];
 
     //상수: 값 변경 불가능한 데이터
     public static final int CUT_LINE = 60;
@@ -18,15 +18,22 @@ public class StudentController {
     }
 
     public Student[] printStudent() {
-        return null;
+
+        return sArr;
     }
 
-    public int sumScore() {
-        return 0;
+    private int sumScore() {
+        int total = 0;
+        for (Student s : sArr) {
+            total += s.getScore();
+        }
+        return total;
     }
 
-    public double[] avgScore() {
-        return null; //doubl, int 배열은 기본 값 null
+    public double[] avgScore() { //doubl, int 배열은 기본 값 null
+        int total = sumScore();
+        double average = (double) total / sArr.length;
+        return new double[] {total, average};
     }
 
 }

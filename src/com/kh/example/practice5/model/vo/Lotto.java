@@ -24,7 +24,7 @@ public class Lotto {
         while (successCnt < lotto.length) {
             int rn = (int) (Math.random() * 45) + 1;
 
-            boolean flag = true;
+            boolean flag = false; //중복을 판단하는 변수
             for (int i = 0; i < successCnt; i++) {
                 if (rn == lotto[i]) {
                     flag = true;

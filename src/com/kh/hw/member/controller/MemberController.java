@@ -63,7 +63,7 @@ public class MemberController {
     public Member[] searchName(String name) {
 
         //이름이 매칭된 회원들을 저장할 배열
-        Member[] foundMembers = {}; //데이터가 없는 o개짜리 배열 데이터 null이랑 다름
+        Member[] foundMembers = {}; //데이터가 없는 0개짜리 배열 데이터 null이랑 다름
         for (Member member : m) {
             if (member == null) break;
             if (name.equals(member.getName())) {
@@ -110,7 +110,7 @@ public class MemberController {
         }
     }
     // 이메일 변경하는 메서드
-    public boolean updateEamil(String id, String email){
+    public boolean updateEmail(String id, String email){
         Member member = searchId(id);
         if (member != null) {
             member.setEmail(email);

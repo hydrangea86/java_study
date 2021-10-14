@@ -2,11 +2,7 @@ package com.kh.hw.member.view;
 
 import com.kh.hw.member.controller.MemberController;
 import com.kh.hw.member.model.vo.Member;
-import com.sun.corba.se.impl.resolver.SplitLocalResolverImpl;
-import com.sun.xml.internal.ws.api.ha.StickyFeature;
-import day01.StdOutput;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 import static com.kh.hw.member.controller.MemberController.SIZE;
@@ -91,17 +87,15 @@ public class MemberMenu {
         System.out.print("- 이메일: ");
         String email = sc.next();
 
-        char gender = 0;
-        while (true) {
-            System.out.print("- 성별(M/F): ");
-            gender = sc.next().toLowerCase().charAt(0);
-            if (gender == 'm' || gender == 'f') {
-                break;
-            } else {
-                System.out.println("\n# 성별을 다시 입력하세요!");
-            }
-        }
+        char gender = checkGender();
+        int age = checkAge();
 
+        mc.insertMember(id, name, pw, email, gender, age);
+        //참고 단축키 Ctrl + Alt +n
+    }
+
+    //나이 입력 메서드
+    private int checkAge() {
         int age = 0;
         while (true) {
             System.out.print("- 나이: ");
@@ -112,8 +106,21 @@ public class MemberMenu {
                 System.out.println("나이 범위가 올바르지 않습니다.");
             }
         }
-        mc.insertMember(id, name, pw, email, gender, age);
-        //참고 단축키 Ctrl + Alt +n
+        return age;
+    }
+    //성별 검증 메서드
+    private char checkGender() {
+        char gender = 0;
+        while (true) {
+            System.out.print("- 성별(M/F): ");
+            gender = sc.next().toLowerCase().charAt(0);
+            if (gender == 'm' || gender == 'f') {
+                break;
+            } else {
+                System.out.println("\n# 성별을 다시 입력하세요!");
+            }
+        }
+        return gender;
     }
 
     //2번 입력메뉴
@@ -147,7 +154,7 @@ public class MemberMenu {
 
     //2-1 아이디 입력메뉴
     private void searchById() {
-        String inputId = inputSearchData("아이디");
+        String inputId = inputSearchData("ID");
         Member member = mc.searchId(inputId);
 
         if (member != null) {
@@ -176,6 +183,7 @@ public class MemberMenu {
     private void searchByEmail() {
         String inputEmail = inputSearchData("이메일");
         Member member = mc.searchEmail(inputEmail);
+
         if (member != null) {
             System.out.println("************** 조회 결과 **************");
             System.out.println(member.inform());
@@ -259,7 +267,7 @@ public class MemberMenu {
                 System.out.println(m.inform());
             }
 
-            /*
+            /**
             for (int i = 0; i < count; i++) {
                 System.out.println(members[i].inform());
             }

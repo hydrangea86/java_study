@@ -2,6 +2,7 @@ package com.kh.hw.member.run;
 
 import com.kh.hw.member.controller.MemberController;
 import com.kh.hw.member.model.vo.Member;
+import com.kh.hw.member.view.MemberMenu;
 
 import java.util.Arrays;
 
@@ -18,10 +19,15 @@ public class Run {
 
  */
 
-        mc.delete("abc");
+       /* mc.delete("abc");
 
         Member[] members = mc.printAll();
         System.out.println(Arrays.toString(members));
+
+        */
+
+        MemberMenu mm = new MemberMenu();
+        mm.mainMenu();
 
     }
 }

@@ -63,7 +63,7 @@ public class MemberController {
     public Member[] searchName(String name) {
 
         //이름이 매칭된 회원들을 저장할 배열
-        Member[] foundMembers = {};
+        Member[] foundMembers = {}; //데이터가 없는 o개짜리 배열 데이터 null이랑 다름
         for (Member member : m) {
             if (member == null) break;
             if (name.equals(member.getName())) {

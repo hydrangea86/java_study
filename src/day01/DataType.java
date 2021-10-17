@@ -27,5 +27,11 @@ public class DataType {
         String msg = "여기는 아주 \"위험해\"!!";
         System.out.println("msg = " + msg);
 
+
+        // 절대값 변환 함수 Math.abs()
+        int x = -2;
+        System.out.printf("x: %d\n", Math.abs(x));
+
+
     }
 }

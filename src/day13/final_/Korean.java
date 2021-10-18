@@ -21,4 +21,5 @@ public class Korean {
                 ", nation='" + MY_NATION + '\'' +
                 '}';
     }
+
 }

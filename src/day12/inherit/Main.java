@@ -16,7 +16,7 @@ public class Main {
         Player p = new Player();
 
         System.out.println("=========================================");
-        new Knight();
+        Knight k = new Knight();
 
         Mage mage = new Mage("마법사님");
         mage.info();

@@ -1,7 +1,7 @@
 package com.kh.practice.point.controller;
 
 import com.kh.practice.point.model.vo.Circle;
-import com.kh.practice.point.model.vo.Point;
+
 
 public class CircleController {
     private Circle c = new Circle();

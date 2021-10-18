@@ -5,22 +5,25 @@ public class Main {
     public static void main(String[] args) {
         Count c1 = new Count();
         c1.x = 5;
-        Count.y = 10;  //static은 클래스 이이름으로 설정 따로 이름 부여 의미 없음
+        Count.y = 10;  //static은 클래스 이름으로 설정 (따로 이름 부여 의미 없음)
         System.out.println("c1.x = " + c1.x);
         System.out.println("c1.y = " + c1.y);
 
+        System.out.println("==========================");
+
         Count c2 = new Count();
         c2.x++;
-        c2.y--;
+        Count.y--;
         System.out.println("c2.x = " + c2.x);
-        System.out.println("c2.y = " + c2.y);
-        System.out.println("c1.y = " + c1.y);
+        System.out.println("c2.y = " + Count.y);
+        System.out.println("c1.y = " + Count.y);
 
         /**
-         *결론: x객체의 메모리는 만든수 만큼 (ex: 주민번호)
-         *     y객체는 메모리에 하나(static) (ex: 국적)
+         *결론: instance x객체의 메모리는 만든수 만큼 (ex: 주민번호)
+         *     static y객체는 메모리에 하나(static) (ex: 국적)
          */
-        
+
+        System.out.println("========================");
         Count c3 = new Count();
         c3.y = 100;
         System.out.println("c3.y = " + c3.y);
@@ -43,6 +46,8 @@ public class Main {
         김철수.전공을물어보다();
         박영희.전공을물어보다();
 
+        System.out.println("====================================");
 
+        학생.국적을물어보다(김철수);
     }
 }

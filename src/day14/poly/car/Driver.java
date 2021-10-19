@@ -27,9 +27,14 @@ public class Driver {
         System.out.println("운전을 시작합니다.");
         s.run();
     }
-
     public void drive(Tucson t) {
         System.out.println("운전을 시작합니다.");
         t.run();
+    }
+    public void drive(Sonata ssssss, Boxster b) {
+
+    }
+    public int drive(Tucson t, Sonata s) {
+        return 0;
     }
 }

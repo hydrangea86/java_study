@@ -11,8 +11,7 @@ public class Main {
 
         w.info();
         w.attack();
-        w.fireSlash();
-
+        w.fireSlash(new Mage("짱짱")); //숙제로 수정
         Player p = new Player();
 
         System.out.println("=========================================");

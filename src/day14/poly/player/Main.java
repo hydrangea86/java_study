@@ -1,13 +1,25 @@
 package day14.poly.player;
 
+import day12.inherit.Hunter;
 import day12.inherit.Mage;
 import day12.inherit.Warrior;
+
+import javax.net.ssl.HttpsURLConnection;
 
 public class Main {
 
     public static void main(String[] args) {
 
+
         Warrior powerMan = new Warrior("짱짱센전사");
+
+        powerMan.fireSlash(new Mage("불쌍한마법사"));
+        System.out.println("============================\n\n");
+
+        powerMan.fireSlash(new Hunter("수상한밀렵꾼", "살쾡이"));
+        System.out.println("============================\n\n");
+
+        powerMan.fireSlash(new Warrior("주차왕파킹"));
 
     }
 }

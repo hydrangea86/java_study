@@ -1,26 +1,27 @@
 package day14.poly.car;
 
-import day01.StdOutput;
-import day10.modi.pac2.C;
-
 public class Main {
 
     public static void main(String[] args) {
 
-        Car t = new Tucson();
-        Car s = new Sonata();
-        Car b = new Boxster();
+        Tucson t = new Tucson();
+        Sonata s = new Sonata();
+        Boxster b = new Boxster();
 
+        //부모 타입인 Car타입 자동으로 자식 타입 객체들 부모 배열에 담을 수 있음
         Car[] cars = {t, s, b, new Tucson(), new Boxster()};
         for (Car c : cars) {
             c.run();
         }
+
+        System.out.println("=========");
+
         Driver park = new Driver();
         park.drive(s);
-        park.drive(t);
-        park.drive(new Sonata());
+        park.drive(b);
         park.drive(new Tucson());
         park.drive(new Boxster());
+
 
         System.out.println("========================");
         Car myCar = park.buyCar("소나타");
@@ -36,7 +37,7 @@ public class Main {
 
         Sonata sn = new Sonata();
         Car cc = sn;
-        Sonata sss = (Sonata) cc;
+        Sonata sss = (Sonata) cc; //down casting(Sonata)
 
         System.out.println("===================================");
         /**
@@ -55,6 +56,11 @@ public class Main {
         Car car = new Sonata();
         Sonata ssss = (Sonata) car;
         ssss.국산세단할인();
+
+        System.out.println("========================");
+
+        Boxster 내박스터 = (Boxster) park.buyCar("박스터");
+        내박스터.스포츠카할증();
 
 
         System.out.println("=================================");

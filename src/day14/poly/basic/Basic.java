@@ -33,9 +33,9 @@ class HPMonitor extends Monitor {
 
 // public 클래스는 이름은 패키지와 같은 이름으로 (하나만)
 public class Basic {
-    Object x1 = new A();  //*최고위 부모 타입은 Object 타입  모두 가능
-    Object x2 = new B();  //*최고위 부모 타입은 Object 타입  모두 가능
-    Object x3 = new C();  //*최고위 부모 타입은 Object 타입  모두 가능
+    Object x1 = new A();  //*최고위 부모 타입은 Object 타입 모두 가능
+    Object x2 = new B();  //*최고위 부모 타입은 Object 타입 모두 가능
+    Object x3 = new C();  //*최고위 부모 타입은 Object 타입 모두 가능
     A x4 = new D();       // A타입 B타입 D타입 가능  *최고위 부모 타입은 Object 타입  모두 가능
     A x5 = new E();       // A타입 C타입 E타입 가능  *최고위 부모 타입은 Object 타입  모두 가능
 

@@ -6,4 +6,7 @@ public class Boxster extends Car{
     public void run() {
         System.out.println("박스터가 달립니다.");
     }
+    public void 스포츠카할증() {
+        System.out.println("보험료가 할증됩니다.");
+    }
 }

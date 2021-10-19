@@ -29,7 +29,24 @@ public class Warrior extends Player {
         System.out.println("# 분노: " + rage);
     }
 
-    public void fireSlash() {
 
+    //fireSlash를 각 캐릭터에게 시전하기 위해서 모든 캐릭터를 담을 수 있는 타입 설정 부모 타입 player
+    public void fireSlash(Player play) {
+        if (play instanceof Mage) {
+            int attackPower = 20;
+            System.out.println(this.name + "님이 " + play.name + "에게 FireSlash를 시전했습니다!");
+            System.out.println(play.name + "(마법사)님이 " + attackPower + "의 피해를 입었습니다.");
+            System.out.println(play.name + "님의 현재 체력: " + (play.hp - attackPower));
+        } else if (play instanceof Hunter) {
+            int attackPower = 15;
+            System.out.println(this.name + "님이 " + play.name + "에게 FireSlash를 시전했습니다!");
+            System.out.println(play.name + "(사냥꾼)님이 " + attackPower + "의 피해를 입었습니다.");
+            System.out.println(play.name + "님의 현재 체력: " + (play.hp - attackPower));
+        } else if (play instanceof Warrior) {
+            int attackPower = 10;
+            System.out.println(this.name + "님이 " + play.name + "에게 FireSlash를 시전했습니다!");
+            System.out.println(play.name + "(전사)님이 " + attackPower + "의 피해를 입었습니다.");
+            System.out.println(play.name + "님의 현재 체력: " + (play.hp - attackPower));
+        }
     }
 }

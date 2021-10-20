@@ -31,22 +31,51 @@ public class Warrior extends Player {
 
 
     //fireSlash를 각 캐릭터에게 시전하기 위해서 모든 캐릭터를 담을 수 있는 타입 설정 부모 타입 player
-    public void fireSlash(Player character) {
-        if (character instanceof Mage) {
-            int attackPower = 20;
-            System.out.println(this.name + "님이 " + character.name + "에게 FireSlash를 시전했습니다!");
-            System.out.println(character.name + "(마법사)님이 " + attackPower + "의 피해를 입었습니다.");
-            System.out.println(character.name + "님의 현재 체력: " + (character.hp - attackPower));
-        } else if (character instanceof Hunter) {
-            int attackPower = 15;
-            System.out.println(this.name + "님이 " + character.name + "에게 FireSlash를 시전했습니다!");
-            System.out.println(character.name + "(사냥꾼)님이 " + attackPower + "의 피해를 입었습니다.");
-            System.out.println(character.name + "님의 현재 체력: " + (character.hp - attackPower));
-        } else if (character instanceof Warrior) {
-            int attackPower = 10;
-            System.out.println(this.name + "님이 " + character.name + "에게 FireSlash를 시전했습니다!");
-            System.out.println(character.name + "(전사)님이 " + attackPower + "의 피해를 입었습니다.");
-            System.out.println(character.name + "님의 현재 체력: " + (character.hp - attackPower));
+    public void fireSlash(Player target) {
+        System.out.printf("%s님이 %s님에게 FireSlash를 시전했습니다!\n"
+                , this.name, target.name);
+        int damage;
+        String job;
+        if (target instanceof Warrior) {
+            damage = 10;
+            job = "전사";
+        } else if (target instanceof Mage) {
+            damage = 20;
+            job = "마법사";
+        } else if (target instanceof Hunter) {
+            damage = 15;
+            job = "사냥꾼";
+        } else {
+            damage = 0;
+            job = "미확인";
         }
+        target.hp -= damage;
+        System.out.printf("%s(%s)님이 %d의 피해를 입었습니다.\n"
+                , target.name, job, damage);
+        System.out.printf("%s님의 현재 체력: %d\n"
+                , target.name, target.hp);
+        System.out.println();
+
+        System.out.println("======================나의 해설=================================");
+
+        /**
+         if (character instanceof Mage) {
+         int attackPower = 20;
+         System.out.println(this.name + "님이 " + character.name + "에게 FireSlash를 시전했습니다!");
+         System.out.println(character.name + "(마법사)님이 " + attackPower + "의 피해를 입었습니다.");
+         System.out.println(character.name + "님의 현재 체력: " + (character.hp - attackPower));
+         } else if (character instanceof Hunter) {
+         int attackPower = 15;
+         System.out.println(this.name + "님이 " + character.name + "에게 FireSlash를 시전했습니다!");
+         System.out.println(character.name + "(사냥꾼)님이 " + attackPower + "의 피해를 입었습니다.");
+         System.out.println(character.name + "님의 현재 체력: " + (character.hp - attackPower));
+         } else if (character instanceof Warrior) {
+         int attackPower = 10;
+         System.out.println(this.name + "님이 " + character.name + "에게 FireSlash를 시전했습니다!");
+         System.out.println(character.name + "(전사)님이 " + attackPower + "의 피해를 입었습니다.");
+         System.out.println(character.name + "님의 현재 체력: " + (character.hp - attackPower));
+         }
+         */
+
     }
 }

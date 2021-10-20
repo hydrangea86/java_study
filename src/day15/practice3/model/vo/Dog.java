@@ -22,9 +22,13 @@ public class Dog extends Animal{
         this.weight = weight;
     }
 
+
+
     @Override
     public void speak() {
         String result = super.toString();
         System.out.printf("%s 몸무게는 %dkg 입니다.\n", result, weight);
+
+        //System.out.println(super.toString() + " 몸무게는 " + weight + "kg 입니다.");
     }
 }

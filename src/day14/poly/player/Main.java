@@ -4,8 +4,6 @@ import day12.inherit.Hunter;
 import day12.inherit.Mage;
 import day12.inherit.Warrior;
 
-import javax.net.ssl.HttpsURLConnection;
-
 public class Main {
 
     public static void main(String[] args) {

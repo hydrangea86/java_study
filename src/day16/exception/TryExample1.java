@@ -16,7 +16,6 @@ public class TryExample1 {
             System.out.println("0으로 나눌 수 없습니다.");
 
         }
-
         System.out.println("프로그램 정상 종료!");
     }
 }

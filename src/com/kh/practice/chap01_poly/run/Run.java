@@ -10,8 +10,5 @@ public class Run {
         LibraryMenu lm = new LibraryMenu();
 
         lm.mainMenu();
-
-        String result = mem.toString();
-        System.out.println(result);
     }
 }

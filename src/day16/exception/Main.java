@@ -3,13 +3,13 @@ package day16.exception;
 public class Main {
 
     public static void main(String[] args) {
-/**
+
          Student kim = new Student("김철수");
          kim.insertScore();
          kim.printAvg();
 
         System.out.println("프로그램 정상 종료!");
-*/
+
 
         System.out.println("==========================================");
         

@@ -21,10 +21,10 @@ public class LibraryMenu {
 
         System.out.print("- 이름: ");
         String name = sc.nextLine();
-        mem.setName(name);
+
         System.out.print("- 나이: ");
         int age = sc.nextInt();
-        mem.setAge(age);
+        sc.nextLine();
 
         char gender = 0;
         while (true) {
@@ -36,13 +36,8 @@ public class LibraryMenu {
                 System.out.println("\n# 성별을 다시 입력하세요!");
             }
         }
-        mem.setGender(gender);
+        mem = new Member(name, age, gender, 0);
         lc.insertMember(mem);
-
-
-
-
-
 
         while (true) {
 
@@ -59,11 +54,24 @@ public class LibraryMenu {
                 case 1:
                     lc.myinfo();
                     break;
+                case 2:
+                    selectAll();
+                    break;
+                case 3:
+                    searchBook();
+                    break;
+                case 4:
+                    rentBook();
+                    break;
+                case 9:
+                    System.out.println("프로그램을 종료합니다.");
+                    System.exit(0); //프로그램 정상 종료 메서드
             }
         }
     }
 
     public void selectAll() {
+        lc.selectAll();
 
     }
 

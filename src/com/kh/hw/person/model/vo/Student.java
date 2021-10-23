@@ -33,6 +33,6 @@ public class Student extends Person {
 
     public String toString() {
 
-        return String.format("(%s, %d, %f, %f, %d, %s)", getName() ,getAge(), getHeight(), getWeight(), getGrade(), getMajor());
+        return super.toString() + ", " + grade + ", " + major;
     }
 }

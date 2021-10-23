@@ -50,8 +50,8 @@ public class Person {
         this.weight = weight;
     }
 
+    @Override
     public String toString() {
-
-        return String.format("(%s, %d, %f, %f)", getName() ,getAge(), getHeight(), getWeight());
+        return name + ", " + age + ", " + height + ", " + weight;
     }
 }

@@ -5,31 +5,40 @@ import com.kh.hw.person.model.vo.Person;
 import com.kh.hw.person.model.vo.Student;
 
 public class PersonController {
-    private Person[] p = new Person[SIZE];
-    private Student[] s = new Student[STUDENT_SIZE];
-    private Employee[] e = new Employee[EMPLOYEE_SIZE];
 
-    public static final int SIZE = 13;
-    public static final int STUDENT_SIZE = 3;
-    public static final int EMPLOYEE_SIZE = 10;
+    //필드부
+    private Student[] s = new Student[3];
+    private Employee[] e = new Employee[10];
 
-
+    //생성자부
     public PersonController() {
     }
 
-    //배열에 기존에 저장된 person 객체의 숫자를 세는 메서드
-    public int personCount() {
-        int count = 0; //
-        for (Person person : p) {
-            if (person == null) break;
-            count++;
+    //메서드부
+    public int[] personCount() {
+        int[] count = new int[2];
+
+        for (int i = 0; i < s.length; i++) {
+            if(s[i] != null) {
+                count[0]++;
+            }
+        }
+        for (int i = 0; i < e.length; i++) {
+            if (e[i] != null) {
+                count[1]++;
+            }
         }
         return count;
     }
 
     public void insertStudent(String name, int age, double height, double weight, int grade, String major) {
-        int count = personCount();
-        s[count] = new Student(name, age, height, weight, grade, major);
+
+        for (int i = 0; i < s.length; i++) {
+            if (s[i] == null) {
+                s[i] = new Student(name, age, height, weight, grade, major);
+                return;
+            }
+        }
     }
 
     public Student[] printStudent() {
@@ -37,8 +46,12 @@ public class PersonController {
     }
 
     public void insertEmployee(String name, int age, double height, double weight, int salary, String dept) {
-        int count = personCount();
-        p[count] = new Employee(name, age, height, weight, salary, dept);
+        for (int i = 0; i < e.length; i++) {
+            if (e[i] == null) {
+                e[i] = new Employee(name, age, height, weight, salary, dept);
+                return;
+            }
+        }
     }
 
     public Employee[] printEmployee() {

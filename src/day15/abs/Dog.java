@@ -5,6 +5,7 @@ public class Dog extends Pet{
     //Pet 기본생성자가 없을 시 에러 이부분 공부
 
     public Dog(String name, String kind) {
+
         super("", "");
     }
 

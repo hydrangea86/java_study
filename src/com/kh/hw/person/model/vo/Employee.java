@@ -32,6 +32,6 @@ public class Employee extends Person{
 
     public String toString() {
 
-        return String.format("(%s, %d, %f, %f, %d, %s)", getName() ,getAge(), getHeight(), getWeight(), getSalary(), getDept());
+        return super.toString() +", " + salary + ", " + dept;
     }
 }

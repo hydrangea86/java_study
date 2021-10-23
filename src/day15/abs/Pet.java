@@ -1,7 +1,5 @@
 package day15.abs;
 
-import org.omg.CORBA.PUBLIC_MEMBER;
-
 public abstract class Pet {
 
     private final String name;

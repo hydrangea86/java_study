@@ -40,6 +40,6 @@ public class Book {
     }
 
     public String toString() {
-        return String.format("%s, %s, %s", title, author, publisher);
+        return "[ Book [title=" + title + ", author=" + author + ", publisher=" + publisher +"]";
     }
 }

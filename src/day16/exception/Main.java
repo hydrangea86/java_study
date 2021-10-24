@@ -20,7 +20,6 @@ public class Main {
         } catch (Exception e) {
             String message = e.getMessage();
             System.out.println("message = " + message);
-
             //에러 로그 확인
             e.printStackTrace();
         }

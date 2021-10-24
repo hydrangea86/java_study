@@ -20,11 +20,10 @@ public class LibraryController {
     }
 
     public void insertMember(Member mem) {
-        System.out.println("Member: " + mem.toString());
+        this.mem = mem;
     }
 
     public Member myinfo() {
-        System.out.println("Member: " + mem.toString());
         return mem;
     }
 
@@ -32,7 +31,26 @@ public class LibraryController {
         return bList;
     }
 
+    public Book[] searchBook(String keywrod) {
+        Book[] books = new Book[bList.length];
+        int count = 0;
+        for (int i = 0; i < bList.length; i++) {
+            if (bList[i].getTitle().contains(keywrod)) {
+                books[count++] = bList[i];
+            }
+        }
+        return books;
+    }
+
     public int rentBook(int index) {
-        return 0;
+        int result = 0;
+        if (bList[index] instanceof AniBook && mem.getAge() <= ((AniBook) bList[index]).getAccessAge()) {
+            result = 1;
+        }
+        if (bList[index] instanceof CookBook  && ((CookBook) bList[index]).isCoupon()) {
+            mem.setCouponCount(mem.getCouponCount() + 1);
+            result = 2;
+        }
+        return result;
     }
 }

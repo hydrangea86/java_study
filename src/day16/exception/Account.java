@@ -5,6 +5,7 @@ public class Account {
     private int balance; //잔액
 
     public Account(int balance) {
+
         this.balance = balance;
     }
 

@@ -11,7 +11,11 @@ public class CookBook extends Book{
         this.coupon = coupon;
     }
 
+    public boolean isCoupon() {
+        return coupon;
+    }
+
     public String toString() {
-        return super.toString() + coupon;
+        return "CookBook" + super.toString() + ", coupon=" + coupon+ "]";
     }
 }

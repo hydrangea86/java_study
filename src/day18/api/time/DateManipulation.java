@@ -22,10 +22,11 @@ public class DateManipulation {
         
         //오늘부터 2년 1개월 3일 후의 날짜 정보
         //Builder패턴
-        LocalDate target = LocalDate.now()
+        LocalDateTime target = LocalDateTime.now()
                 .plusYears(2)
                 .plusMonths(1)
-                .plusDays(3);
+                .plusDays(3)
+                .minusHours(5);
         System.out.println("target = " + target);
 
         //시간 비교

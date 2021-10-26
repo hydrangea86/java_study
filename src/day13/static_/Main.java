@@ -32,7 +32,7 @@ public class Main {
         c1.m1();
         c2.m1();
 
-        //static 메서드는 클래스 이름으로 통일
+        // ******** static 메서드는 클래스 이름으로 통일 ********
         Count.m2();
         Count.m2();
 

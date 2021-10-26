@@ -5,8 +5,8 @@ public class Warrior extends Player {
     public int rage;
 
     public Warrior() {
-        //super(); 부모의 기본생성자 호출 자동 숨김(부모객체 두개 생성)
-        this("dd");
+//      super(); 부모의 기본생성자 호출 자동 숨김(부모객체 두개 생성)
+        this("노네임");
         System.out.println("Warrior 객체 생성됨!");
     }
 
@@ -56,9 +56,9 @@ public class Warrior extends Player {
                 , target.name, target.hp);
         System.out.println();
 
-        System.out.println("======================나의 해설=================================");
 
         /**
+         "====================================나의 해설============================================="
          if (character instanceof Mage) {
          int attackPower = 20;
          System.out.println(this.name + "님이 " + character.name + "에게 FireSlash를 시전했습니다!");

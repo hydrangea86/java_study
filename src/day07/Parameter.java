@@ -1,7 +1,5 @@
 package day07;
 
-import sun.util.locale.StringTokenIterator;
-
 public class Parameter {
 
     //랜덤으로 음식하나를 골라서 리턴하는 메서드
@@ -30,7 +28,9 @@ public class Parameter {
         String food = chooseRandomFood();
         System.out.println("food= " + food);
 
-        add(10, 20);
+        int result1 = add(10, 20);
+        System.out.println("result1 = " + result1);
+
         //int result = add(5, 10, 15, 20); // 배열 스프레드 문법
         int result = add(new int[] {5, 10, 15, 20});
         System.out.println("result= " + result);

@@ -3,7 +3,7 @@ package day10.modi.pac1;
  public class A {
 
     public int f1;
-    int f2; //default제한
+    int f2; //필드 앞에 아무 것도 없을시 default로 제한
     private int f3;
 
     public void m1() {

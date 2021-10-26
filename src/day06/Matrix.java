@@ -53,6 +53,7 @@ public class Matrix {
         for (int[][] ints : arr3d) {
             for (int[] anInt : ints) {
                 for (int i : anInt) {
+                    System.out.print(i + " ");
 
                 }
             }

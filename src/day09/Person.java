@@ -14,7 +14,7 @@ public class Person {
 
     //문자메시지 보내는 기능
     void contact(Person target, String msg) {
-        System.out.printf("%s님이 %s님에게 문자를 전송합니다.\n", name, target.name);
+        System.out.printf("%s님이 %s님에게 문자를 전송합니다.\n", this.name, target.name);
         myPhone.powerOn();
         myPhone.sendMessage(target.myPhone, msg);
     }

@@ -17,7 +17,7 @@ public class Player {
     public Player(String name) {
         this(name, 1);
         System.out.println("2번 생성자!");
-        //this.name = name; //this 필드 앞에 씀 매개변수랑 같을 때 안쓸 때는 자동으로 this default
+        //this.name = name; //this는 필드 앞에 씀 매개변수랑 같을 때 안쓸 때는 자동으로 this default
         //this.level = 1;
         //this.hp = 50 + level * 2;
     }

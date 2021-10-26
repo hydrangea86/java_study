@@ -8,5 +8,10 @@ public class Knight extends Warrior {
         this.name = "기사왕";
         this.rage = 100;
     }
+    @Override
+    public void info() {
+        super.info();
+        System.out.println("# 분노:" + rage);
+    }
 
 }

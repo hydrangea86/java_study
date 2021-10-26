@@ -1,6 +1,6 @@
 package day12.inherit;
 
-public class Player extends Object { // extends Object 안써도 자동으로  숨김
+public class Player extends Object { // extends Object 안써도 자동으로 숨김(object 최상위)
     //다중 상속은 자바에서 기본적으로 막아 놓음
 
     public String name;

@@ -1,7 +1,5 @@
 package day18.generic;
 
-import day10.modi.pac1.B;
-
 public class Main {
     
     public static void main(String[] args) {
@@ -25,13 +23,15 @@ public class Main {
         
         Basket<Apple> abp = new Basket<>();
         abp.setF(new Apple());
-        Apple f = abp.getF();
-        System.out.println("f = " + f);
-        
+        Apple a = abp.getF();
+        System.out.println("a = " + a);
+
+        System.out.println("=======================");
+
         Basket<Peach> pcb = new Basket<>();
         pcb.setF(new Peach());
-        Peach peach = pcb.getF();
-        System.out.println("peach = " + peach);
+        Peach p = pcb.getF();
+        System.out.println("p = " + p);
 
         //Basket<Water> waterBasket = new Basket<>();
     }

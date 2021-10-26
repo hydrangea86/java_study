@@ -12,10 +12,14 @@ public class Main {
         w.info();
         w.attack();
         w.fireSlash(new Mage("짱짱")); //숙제로 수정
+
+        System.out.println("=============================");
         Player p = new Player();
+        p.info();
 
         System.out.println("=========================================");
         Knight k = new Knight();
+        k.info();
 
         Mage mage = new Mage("마법사님");
         mage.info();

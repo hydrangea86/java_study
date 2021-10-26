@@ -20,6 +20,7 @@ public class Main {
         Parent upChild = new Child();
         System.out.println(upChild);
         upChild.m2();
+        //upChild.m3(); //다운캐스팅해야함
         ((Child) upChild).m3(); //downcasting
 
     }

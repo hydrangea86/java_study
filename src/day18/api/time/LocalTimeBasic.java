@@ -42,7 +42,7 @@ public class LocalTimeBasic {
         DayOfWeek dayOfWeek = now.getDayOfWeek();
         System.out.println("dayOfWeek = " + dayOfWeek);
 
-        String weekDay = "";
+        String weekDay;
         switch (dayOfWeek) {
             case MONDAY: weekDay = "월요일";
                 System.out.println(weekDay);

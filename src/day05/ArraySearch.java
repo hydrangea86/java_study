@@ -14,7 +14,7 @@ public class ArraySearch {
         Scanner sc = new Scanner(System.in);
 
         //순차 탐색 알고리즘
-        System.out.println("찾는 음식: ");
+        System.out.print("찾는 음식: ");
         String target = sc.next();
         sc.close();
 
@@ -26,7 +26,7 @@ public class ArraySearch {
             }
         }
         boolean result = index != -1;
-        System.out.println("음식 탐색 성공" + result);
+        System.out.println("음식 탐색 성공: " + result);
         System.out.println("찾은 음식의 인덱스:" + index);
     }
 }

@@ -51,7 +51,7 @@ public class MapBasic {
 
         //map 데이터 삭제: remove(key)
         memberMap.remove("야옹이");
-        System.out.println(member);
+        System.out.println(memberMap);
 
         //map에 저장된 key 존재 유무 확인: containskey(obj)
         System.out.println(memberMap.containsKey("야옹이"));

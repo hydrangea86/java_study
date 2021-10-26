@@ -53,7 +53,7 @@ public class ArrayBasic {
 
         //배열을 생성만하고 초기화히지 않았다면?
         //각 타입의 기본값으로 자동 초기화
-        String [] bArr = new String[5];
+        String[] bArr = new String[5];
         System.out.println(Arrays.toString((bArr)));
 
         //배열 복사 알고리즘 (주소 복사가 아닌 객체 복사)

@@ -18,6 +18,7 @@ public class ArrayInsert {
         for (int i = 0; i < arr.length; i++) {
             temp[i] = arr[i];
         }
+        System.out.println("복사후" + Arrays.toString(temp));
 
         //3. 끝데이터부터 뒤로 밀기
         int index = 2; //삽입할 위치

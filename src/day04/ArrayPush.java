@@ -31,5 +31,9 @@ public class ArrayPush {
         String[] sArr = new String[0];
         System.out.println("sArr= " + Arrays.toString(sArr));
 
+        
+        String[] sArr1 = new String[2];
+        System.out.println(Arrays.toString(sArr1));
+
     }
 }

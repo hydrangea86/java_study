@@ -6,9 +6,12 @@ public class ListBasic {
 
     public static void main(String[] args) {
 
-//        String[] strs = new String[10];
-        List<String> sList = new ArrayList<>(); //배열 타입 제한 ex) <String>
+        //컬렉션
+        // String[] strs = new String[10];
         // LinkedList<String> sList1 = new LinkedList<>(); //배열 타입 제한 ex) <String>
+        // set 계열은 전체탐색 및 저장 입력 빠름
+        List<String> sList = new ArrayList<>(); //배열 타입 제한 ex) <String>
+
 
         String s1 = "멍멍이";
         String s2 = "야옹이";
@@ -74,7 +77,6 @@ public class ListBasic {
         System.out.println(sList.isEmpty()); //비어있으면 true
 
         //java 정렬 부분 자료구조 공부하기
-
         //DB를 쓸 경우 순서 정렬은 sql에서 순서 정렬하는게 성능상 유리
     }
 }

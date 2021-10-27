@@ -45,7 +45,7 @@ public class MapBasic {
 
         System.out.println("======================================");
 
-        //map에서 저장된 객체 참조. get(key)
+        //map에서 저장된 객체 참조. get(key) 값의 value
         Member member = memberMap.get("짹짹이");
         System.out.println(member);
 
